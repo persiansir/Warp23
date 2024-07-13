@@ -45,43 +45,43 @@ endipv4(){
 	iplist=100
 	while true
 	do
-		temp[$n]=$(echo 162.159.192.$(($RANDOM%256)))
+		temp[$n]=$(echo 91.148.238.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 162.159.193.$(($RANDOM%256)))
+		temp[$n]=$(echo 45.139.24.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 162.159.195.$(($RANDOM%256)))
+		temp[$n]=$(echo 45.158.171.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 188.114.96.$(($RANDOM%256)))
+		temp[$n]=$(echo 108.162.195.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 188.114.97.$(($RANDOM%256)))
+		temp[$n]=$(echo 62.133.63.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 188.114.98.$(($RANDOM%256)))
+		temp[$n]=$(echo 172.67.180.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 188.114.99.$(($RANDOM%256)))
+		temp[$n]=$(echo 104.18.202.$(($RANDOM%256)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
@@ -94,49 +94,49 @@ endipv4(){
 		then
 			break
 		else
-			temp[$n]=$(echo 162.159.192.$(($RANDOM%256)))
+			temp[$n]=$(echo 172.67.161.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 162.159.193.$(($RANDOM%256)))
+			temp[$n]=$(echo 95.164.9.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 162.159.195.$(($RANDOM%256)))
+			temp[$n]=$(echo 188.212.132.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.96.$(($RANDOM%256)))
+			temp[$n]=$(echo 85.159.229.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.97.$(($RANDOM%256)))
+			temp[$n]=$(echo 185.146.173.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.98.$(($RANDOM%256)))
+			temp[$n]=$(echo 217.196.103.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.99.$(($RANDOM%256)))
+			temp[$n]=$(echo 45.89.52.$(($RANDOM%256)))
 			n=$[$n+1]
 		fi
 	done
@@ -233,7 +233,7 @@ v2ray() {
   PublicKey=$(awk -F' = ' '/PublicKey/{print $2}' wgcf-profile.conf)
   MTU=$(awk -F' = ' '/MTU/{print $2}' wgcf-profile.conf)
   
-  WireguardURL="wireguard://$(urlencode "$PrivateKey")@$Endip_v46?address=$(urlencode "$Address")&publickey=$(urlencode "$PublicKey")&mtu=$(urlencode "$MTU")#Peyman_WireGuard"
+  WireguardURL="wireguard://$(urlencode "$PrivateKey")@$Endip_v46?address=$(urlencode "$Address")&publickey=$(urlencode "$PublicKey")&mtu=$(urlencode "$MTU")#MohsenStar"
 
   echo $WireguardURL
 }
@@ -246,7 +246,7 @@ show() {
 	    Endip_v46=$(awk 'NR==2 {split($1, arr, ","); print arr[1]}' result.csv)
 	    sed -i "s/Endpoint =.*/Endpoint = $Endip_v46/g" wgcf-profile.conf
     else
-	    Endip_v46="engage.cloudflareclient.com:2408"
+	    Endip_v46="162.159.195.24:7559"
 	fi
     echo -e "${purple}************************************${rest}"
     echo -e "${purple}*   👇${green}Here is WireGuard Config👇   ${purple}*${rest}"
