@@ -85,8 +85,9 @@ endipv4(){
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
-			break	#😃	
-			temp[$n]=$(echo 144.208.128.$(($RANDOM%2048)))
+			break
+                fi
+		temp[$n]=$(echo 144.208.128.$(($RANDOM%2048)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
@@ -126,7 +127,7 @@ endipv4(){
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
-			break	#😄
+			break
 		fi
 	done
 	while true
