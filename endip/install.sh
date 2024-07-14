@@ -33,7 +33,7 @@ cfwarpIP() {
     if [[ ! -f "$PREFIX/bin/warpendpoint" ]]; then
         echo "Downloading warpendpoint program"
         if [[ -n $cpu ]]; then
-            curl -L -o warpendpoint -# --retry 2 https://raw.githubusercontent.com/persiansir/Warp23/main/endip/install.sh/$cpu
+            curl -L -o warpendpoint -# --retry 2 https://raw.githubusercontent.com/Ptechgithub/warp/main/endip/$cpu
             cp warpendpoint $PREFIX/bin
             chmod +x $PREFIX/bin/warpendpoint
         fi
@@ -45,85 +45,43 @@ endipv4(){
 	iplist=100
 	while true
 	do
-		temp[$n]=$(echo 104.103.72.$(($RANDOM%2048)))
+		temp[$n]=$(echo 162.159.192.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 104.96.128.$(($RANDOM%2048)))
+		temp[$n]=$(echo 162.159.193.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 109.126.64.$(($RANDOM%2048)))
+		temp[$n]=$(echo 162.159.195.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 128.130.0.$(($RANDOM%2048)))
+		temp[$n]=$(echo 188.114.96.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 129.27.0.$(($RANDOM%2048)))
+		temp[$n]=$(echo 188.114.97.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 131.130.0.$(($RANDOM%2048)))
+		temp[$n]=$(echo 188.114.98.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
 			break
 		fi
-		temp[$n]=$(echo 137.208.0.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-                fi
-		temp[$n]=$(echo 144.208.128.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-		fi
-		temp[$n]=$(echo 152.53.101.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-		fi
-		temp[$n]=$(echo 160.20.100.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-		fi
-		temp[$n]=$(echo 162.213.160.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-		fi
-		temp[$n]=$(echo 162.25.72.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-		fi
-		temp[$n]=$(echo 17.68.48.$(($RANDOM%2048)))
-		n=$[$n+1]
-		if [ $n -ge $iplist ]
-		then
-			break
-		fi
-		temp[$n]=$(echo 176.104.224.$(($RANDOM%2048)))
+		temp[$n]=$(echo 188.114.99.$(($RANDOM%4094)))
 		n=$[$n+1]
 		if [ $n -ge $iplist ]
 		then
@@ -136,49 +94,49 @@ endipv4(){
 		then
 			break
 		else
-			temp[$n]=$(echo 176.120.160.$(($RANDOM%2048)))
+			temp[$n]=$(echo 162.159.192.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 176.96.96.$(($RANDOM%2048)))
+			temp[$n]=$(echo 162.159.193.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 178.18.160.$(($RANDOM%2048)))
+			temp[$n]=$(echo 162.159.195.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 18.66.13.$(($RANDOM%2048)))
+			temp[$n]=$(echo 188.114.96.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.97.$(($RANDOM%2048)))
+			temp[$n]=$(echo 188.114.97.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.98.$(($RANDOM%2048)))
+			temp[$n]=$(echo 188.114.98.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 		if [ $(echo ${temp[@]} | sed -e 's/ /\n/g' | sort -u | wc -l) -ge $iplist ]
 		then
 			break
 		else
-			temp[$n]=$(echo 188.114.99.$(($RANDOM%2048)))
+			temp[$n]=$(echo 188.114.99.$(($RANDOM%4094)))
 			n=$[$n+1]
 		fi
 	done
@@ -291,14 +249,14 @@ show() {
 	    Endip_v46="engage.cloudflareclient.com:2408"
 	fi
     echo -e "${purple}************************************${rest}"
-    echo -e "${purple}*   ðŸ‘‡${green}Here is WireGuard ConfigðŸ‘‡   ${purple}*${rest}"
+    echo -e "${purple}*   👇${green}Here is WireGuard Config👇   ${purple}*${rest}"
     echo -e "${purple}************************************${rest}"
-    echo -e "${cyan}       ðŸ‘‡Copy for :${yellow}[Nekobox] ðŸ‘‡${rest}"
+    echo -e "${cyan}       👇Copy for :${yellow}[Nekobox] 👇${rest}"
     echo ""
     echo -e "${green}$(cat wgcf-profile.conf)${rest}"
     echo ""
     echo -e "${purple}************************************${rest}"
-    echo -e "${cyan}       ðŸ‘‡Copy for :${yellow}[V2rayNG] ðŸ‘‡${rest}"
+    echo -e "${cyan}       👇Copy for :${yellow}[V2rayNG] 👇${rest}"
     echo ""
     echo -e "${green}$(v2ray)${rest}"
     echo ""
@@ -421,7 +379,7 @@ case "$choice" in
         ;;
     0)
         echo -e "${purple}*********************${rest}"
-        echo -e "${cyan}By ðŸ–${rest}"
+        echo -e "${cyan}By 🖐${rest}"
         exit
         ;;
     *)
